@@ -27,10 +27,12 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(16.dp),
                             style = MaterialTheme.typography.titleLarge
                         )
-                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                            for (number in listOf(1, 3, 4, 5, 10)) {
-                                TextButton(onClick = { task = number }) {
-                                    Text(number.toString())
+                        for (tasks in listOf(listOf(1, 3, 4, 5), listOf(6, 7, 8, 10))) {
+                            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                                for (number in tasks) {
+                                    TextButton(onClick = { task = number }) {
+                                        Text(number.toString())
+                                    }
                                 }
                             }
                         }
@@ -41,6 +43,9 @@ class MainActivity : ComponentActivity() {
                                 3 -> TextSamples()
                                 4 -> StyledButton()
                                 5 -> Initials()
+                                6 -> CircleExamples()
+                                7 -> ContactLayouts()
+                                8 -> WaterTracker()
                                 10 -> ShoppingCartScreen()
                             }
                         }
